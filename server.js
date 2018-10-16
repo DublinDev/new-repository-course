@@ -53,6 +53,14 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        welcomeMessage:'Welcome to the site',
+        pageTitle:'Projects Page',
+        currentYear:new Date().getFullYear()
+    });
+});
+
 app.get('/Bad', (req, res) => {
     res.send({
        errorMessgae: 'Unable to handle request' 
@@ -62,3 +70,5 @@ app.get('/Bad', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
 });
+
+// /projects
